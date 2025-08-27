@@ -1,20 +1,26 @@
-import { Link, useLocation } from 'react-router-dom'
+// src/components/Header.jsx
+import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 import { FaShoppingCart } from 'react-icons/fa'
 
 export default function Header() {
   const { state } = useCart()
-  const { pathname } = useLocation()
 
   return (
     <header className="header">
-      <nav className="nav">
-        {pathname !== '/products' && <Link to="/products">Products</Link>}
-        {pathname !== '/cart' && <Link to="/cart">Cart</Link>}
-      </nav>
-      <div className="cart">
-        <FaShoppingCart />
-        <span className="badge">{state.totalCount}</span>
+      <div className="header__left">
+        <Link to="/" className="brand">Paradise Nursery</Link>
+      </div>
+
+      <div className="header__center">
+        <Link to="/products" className="navlink">Products</Link>
+      </div>
+      
+      <div className="header__right">
+        <Link to="/cart" className="cartbtn" aria-label="Open shopping cart">
+          <FaShoppingCart aria-hidden="true" />
+          <span className="badge">{state.totalCount}</span>
+        </Link>
       </div>
     </header>
   )

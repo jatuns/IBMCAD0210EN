@@ -2,14 +2,23 @@ import { Link } from 'react-router-dom'
 import { useCart } from '../context/CartContext'
 
 export default function Cart() {
-  const { state, dispatch } = useCart()
+    const { state, dispatch } = useCart()
+
+    // Toplamlar (gerekirse vergi/kargo ekleyebilirsin, ama gereksinim "total cost" için state.totalPrice yeterli)
+    const isEmpty = state.items.length === 0
+
+    function handleCheckout() {
+    // Gereksinim: "Coming Soon" gibi bir mesaj göster
+        alert('Coming Soon')
+    }
 
   return (
     <main className="cart-page">
       <h2>Shopping Cart</h2>
+
       <div className="summary">
-        <span>Total items: {state.totalCount}</span>
-        <span>Total cost: ₺{state.totalPrice.toFixed(2)}</span>
+        <div><strong>Total items:</strong> {state.totalCount}</div>
+        <div><strong>Total cost:</strong> ₺{state.totalPrice.toFixed(2)}</div>
       </div>
 
       {state.items.length === 0 ? (
