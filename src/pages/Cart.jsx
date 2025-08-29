@@ -9,7 +9,7 @@ export default function Cart() {
 
     function handleCheckout() {
     // Gereksinim: "Coming Soon" gibi bir mesaj göster
-        alert('Coming Soon')
+        alert('Coming Soon');
     }
 
   return (
@@ -22,7 +22,7 @@ export default function Cart() {
       </div>
 
       {state.items.length === 0 ? (
-        <p>Sepet boş. <Link to="/products">Alışverişe devam et</Link></p>
+        <p>Cart is empty. <Link to="/products">Continue the shopping.</Link></p>
       ) : (
         <ul className="cart-list">
           {state.items.map(it => (

@@ -10,8 +10,8 @@ export default function Landing() {
       <div className="overlay">
         <div className="landing-inner">
           <h1>Paradise Nursery</h1>
-          <p>Evinize nefes aldıran, bakımı kolay ve estetik bitkiler.</p>
-          <Link className="cta" to="/products">Get Started</Link>
+          <p>We bring nature into your home with curated, easy-care indoor plants.</p>
+          <Link to="/products" className="cta">Get Started</Link>
         </div>
       </div>
     </section>
